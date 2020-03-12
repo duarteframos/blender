@@ -890,7 +890,7 @@ class DupliOffsetFromObject(Operator):
         scene = context.scene
         collection = context.collection
 
-        collection.instance_offset = context.active_object.location
+        collection.instance_offset = context.object.matrix_world.translation
 
         return {'FINISHED'}
 
