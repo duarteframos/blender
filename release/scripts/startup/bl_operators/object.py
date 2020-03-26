@@ -878,13 +878,13 @@ class DupliOffsetFromCursor(Operator):
 
 class DupliOffsetFromObject(Operator):
     """Set offset used for collection instances based on active object position"""
-    bl_idname = "object.instance_offset_from_active_object"
+    bl_idname = "object.instance_offset_from_object"
     bl_label = "Set Offset From Object"
     bl_options = {'INTERNAL', 'UNDO'}
 
     @classmethod
     def poll(cls, context):
-        return (context.active_object is not None)
+        return (context.object is not None)
 
     def execute(self, context):
         scene = context.scene
